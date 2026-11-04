@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080611">
+<meta name="description" content="ZYNTRIX - A new digital culture. Powered by community, driven by memes.">
+<title>ZYNTRIX | The Cyber Fox</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #080611;
+  color: #f4f0ff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --purple: #a855ff;
+  --cyan: #00eaff;
+  --dark: #080611;
+  --card: #110d22;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  border-bottom: 1px solid #24153b;
+  background: #080611;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: white;
+}
+
+.brand span {
+  color: var(--purple);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  color: #c8bddf;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: radial-gradient(ellipse at center, #24103f, #080611 65%);
+}
+
+.hero-tag {
+  color: var(--cyan);
+  letter-spacing: 5px;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 10vw, 110px);
+  font-weight: 900;
+  letter-spacing: 8px;
+  background: linear-gradient(90deg, #fff, #b86bff, #00eaff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 25px #922dff55);
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 25px auto;
+  line-height: 1.8;
+  color: #bdb4d4;
+  font-size: 17px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--purple), #7138ff);
+  color: white;
+  box-shadow: 0 0 25px #8b35ff44;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px #8b35ff88;
+}
+
+.btn-secondary {
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+}
+
+.btn-secondary:hover {
+  background: #00eaff15;
+}
+
+section {
+  padding: 100px 8%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.section-title span {
+  color: var(--purple);
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 50px;
+  color: #aaa0c4;
+  line-height: 1.8;
+}
+
+.about {
+  background: #0c0918;
+}
+
+.about-content {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+  line-height: 2;
+  color: #c4bad9;
+  font-size: 17px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  padding: 35px;
+  background: var(--card);
+  border: 1px solid #30204b;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: var(--purple);
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #922dff18;
+}
+
+.card h3 {
+  color: var(--cyan);
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.card p {
+  color: #aaa0c4;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.community {
+  text-align: center;
+  background: radial-gradient(ellipse at center, #1a1030, #080611 75%);
+}
+
+.community p {
+  color: #aaa0c4;
+  margin: 20px auto 35px;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+footer {
+  padding: 35px 8%;
+  text-align: center;
+  border-top: 1px solid #24153b;
+  color: #817692;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.disclaimer {
+  max-width: 800px;
+  margin: 15px auto;
+  color: #71677f;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    letter-spacing: 3px;
+  }
+
+  section {
+    padding: 70px 6%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <a href="#" class="brand">ZYN<span>TRIX</span></a>
+
+  <div class="nav-links">
+    <a href="#about">ABOUT</a>
+    <a href="#vision">VISION</a>
+    <a href="#community">COMMUNITY</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-tag">WELCOME TO THE DIGITAL FRONTIER</div>
+
+  <h1>ZYNTRIX</h1>
+
+  <p>
+    More than a meme. A digital identity.
+    A cybernetic spirit built around internet culture,
+    creativity and community.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#about" class="btn btn-primary">DISCOVER ZYNTRIX</a>
+    <a href="#community" class="btn btn-secondary">JOIN THE MOVEMENT</a>
+  </div>
+
+  <p style="font-size: 12px; color: #78698f; letter-spacing: 3px;">
+    DREAM · HOLD · MOON
+  </p>
+</header>
+
+<section class="about" id="about">
+  <h2 class="section-title">WHAT IS <span>ZYNTRIX?</span></h2>
+
+  <p class="section-subtitle">
+    A new concept emerging at the intersection of memes,
+    digital culture and blockchain technology.
+  </p>
+
+  <div class="about-content">
+    Zyntrix is an independent community-driven project
+    inspired by the creative and unpredictable nature
+    of internet culture.
+
+    <br><br>
+
+    Our vision is to build a recognizable digital identity
+    with a futuristic aesthetic, an engaged community
+    and a transparent approach to development.
+
+    <br><br>
+
+    We are at the beginning of our journey.
+    The future will be shaped by the community.
+  </div>
+</section>
+
+<section id="vision">
+  <h2 class="section-title">OUR <span>VISION</span></h2>
+
+  <p class="section-subtitle">
+    Three principles behind the Zyntrix identity.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>01 / COMMUNITY</h3>
+      <p>
+        A project where creativity, participation
+        and shared culture are at the center.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>02 / TRANSPARENCY</h3>
+      <p>
+        Clear information, honest communication
+        and an open approach to development.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>03 / INNOVATION</h3>
+      <p>
+        Exploring digital culture and blockchain
+        with a distinctive futuristic identity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="community" id="community">
+  <h2 class="section-title">JOIN THE <span>COMMUNITY</span></h2>
+
+  <p>
+    Zyntrix is in its early development stage.
+    Our community channels will be announced
+    when they are officially ready.
+  </p>
+
+  <span class="btn btn-secondary">
+    COMMUNITY COMING SOON
+  </span>
+</section>
+
+<footer>
+  <div class="brand">ZYN<span>TRIX</span></div>
+
+  <p>© 2026 Zyntrix. All rights reserved.</p>
+
+  <div class="disclaimer">
+    Zyntrix is an experimental digital community project.
+    Cryptocurrency assets involve substantial risk and may
+    lose all their value. Nothing on this website constitutes
+    financial advice, an offer to invest or a promise of returns.
+    No token launch or availability is currently guaranteed.
+  </div>
+</footer>
+
+</body>
+</html>
